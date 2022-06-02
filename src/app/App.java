@@ -8,6 +8,7 @@ public class App {
     static String email;
     static String phone;
     static String productName;
+    static String placeOfDelivery;
     static int quantity;
     static double price;
     static String roundBonus;
@@ -31,6 +32,8 @@ public class App {
         email = scanner.nextLine();
         System.out.print("Enter product name: ");
         productName = scanner.nextLine();
+        System.out.print("Enter place of delivery: ");
+        placeOfDelivery = scanner.nextLine();
         System.out.print("Enter product quantity: ");
         quantity = scanner.nextInt();
         System.out.print("Enter product price: ");
@@ -40,7 +43,7 @@ public class App {
     private static String processData() {
         merchantA = new MerchantA(merchantName, phone, email);
         infoMerchant = merchantA.infoMerchant();
-        product = new ProductA(productName, quantity, price);
+        product = new ProductA(productName, quantity, price, placeOfDelivery);
         infoProduct = product.infoProduct();
         double sales = product.calcSales(quantity, price);
         roundBonus = Rounder.roundValue(merchantA.calcBonus(sales));
