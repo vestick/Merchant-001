@@ -3,16 +3,22 @@ package app;
 // Модель объекта Продавца.
 public class Merchant {
 
-    private final String name;
+    private final String firstName;
+    private final String secondName;
     private final String phone;
 
-    public Merchant(String name, String phone) {
-        this.name = name;
+    public Merchant(String firstName, String secondName, String phone) {
+        this.firstName = firstName;
+        this.secondName= secondName;
         this.phone = phone;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
     }
 
     public String getPhone() {
