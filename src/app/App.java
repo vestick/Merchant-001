@@ -11,6 +11,7 @@ public class App {
     static String productName;
     static int quantity;
     static double price;
+    static double weight;
     static String roundBonus;
     static ProductA product;
     static MerchantA merchantA;
@@ -38,12 +39,14 @@ public class App {
         quantity = scanner.nextInt();
         System.out.print("Enter product price: ");
         price = scanner.nextDouble();
+        System.out.print("Enter product weight: ");
+        weight = scanner.nextDouble();
     }
 
     private static String processData() {
         merchantA = new MerchantA(merchantFirstName, merchantSecondName, phone, email);
         infoMerchant = merchantA.infoMerchant();
-        product = new ProductA(productName, quantity, price);
+        product = new ProductA(productName, quantity, price, weight);
         infoProduct = product.infoProduct();
         double sales = product.calcSales(quantity, price);
         roundBonus = Rounder.roundValue(merchantA.calcBonus(sales));
